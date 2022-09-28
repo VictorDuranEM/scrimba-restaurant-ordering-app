@@ -1,0 +1,340 @@
+/* ----------------------- */
+/* Reset                   */
+/* ----------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* Set up the body */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remote animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ----------------------- */
+/* Typography              */
+/* ----------------------- */
+
+body {
+    font-family: 'Smythe', cursive;
+    color: #8B8B8B;
+    background: white;
+}
+
+.header {
+    color: white;
+}
+
+.header-title {
+    font-size: 2.4375rem;
+    font-weight: 400;
+}
+
+.header-description {
+    font-size: 1.40125rem;
+}
+
+.item-title, 
+.item-price,
+.order-title,
+.order-item-title,
+.order-item-price,
+.order-total,
+.modal-title {
+    color: black;
+    font-weight: inherit;
+}
+
+.item-title, 
+.order-title,
+.order-item-title,
+.order-item-price,
+.order-total-title {
+    font-size: 1.75rem;
+}
+
+.item-price, 
+.order-item-price, 
+.order-total-price, 
+.modal-btn,
+.modal-input {
+    font-size: 1.25rem;
+}
+
+.item-image {
+    font-size: 4.92rem;
+}
+
+.item-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+    color: #3C3C3C;
+}
+
+.order-item-remove {
+    color: #BBBBBB;
+}
+
+.order-item-remove {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.75rem;    
+}
+
+.order-total {
+    color: #0E0E0E;
+}
+
+.order-total-title {
+    font-weight: inherit;
+}
+
+.order-btn, .modal {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+.order-btn, 
+.modal-btn {
+    color: white;
+    background: #16DB99;
+    font-weight: 700;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-input {
+    color: #757575;
+}
+
+.thanks {
+    font-size: 2rem;
+    color: #065F46;
+}
+
+/* ----------------------- */
+/* Layout                  */
+/* ----------------------- */
+
+html {
+    background: #F5F5F5;
+}
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url('./images/hamburger.png');
+    background-size: cover;
+    background-position-y: -155px;
+    height: 167px;
+    padding: 1.4em 2.6em;
+}
+
+.items {
+    margin: 1em auto;
+}
+
+.item {
+    display: grid;
+    grid-template: repeat(3, auto) / 90px auto 50px;
+    grid-template-areas: 
+        "image title btn"
+        "image description btn"
+        "image price btn";
+    padding: 2em 0;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.item-image {
+    grid-area: image;
+}
+
+.item-title {
+    grid-area: title;
+    align-self: end;
+}
+
+.item-description {
+    grid-area: description;
+}
+
+.item-btn {
+    grid-area: btn;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1.5px solid #DEDEDE;
+    background: transparent;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.order {
+    margin: 3em 0;
+}
+
+.order-title {
+    text-align: center;
+}
+
+.order-items {
+    margin-top: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 2px solid #393333;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+}
+
+.order-item-remove {
+    margin: 0 auto 0 1em;
+}
+
+.order-total {
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.order-btn, .modal-btn {
+    background: #16DB99;
+}
+
+.order-btn {
+    width: 100%;
+    border: none;
+    padding: 1em;
+    margin: 1.5em 0;
+}
+
+.modal, 
+.modal-input, 
+.modal-btn {
+    border-radius: 3.89px;
+}
+
+.modal-root {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    width: 0px;
+    height : 0px;
+}
+
+.modal-root.visible {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.modal {
+    position: relative;
+    max-height: 520px;
+    max-width: 90%;
+    width: 560px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+    padding: 1em 1.4em;
+    background: white;
+}
+
+.modal-title {
+    text-align: center;
+    margin: 1em 0 1.5em;
+}
+
+.modal-input {
+    padding: 1em;
+    border: 1.3px solid #757575;
+    margin-block: .5em;
+}
+
+.modal-btn {
+    padding: 1em;
+    border: none;
+    margin: 1.5em 0;
+}
+
+.thanks {
+    margin-block: 1.5em;
+    text-align: center;
+    padding: 1.2em;
+    background: #ECFDF5;
+}
+
+button, .order-item-remove {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

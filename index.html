@@ -1,0 +1,39 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+       <link rel="stylesheet" href="index.css">
+       
+       <!-- Google Fonts -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Smythe&display=swap" rel="stylesheet"> 
+       
+	    <script defer src="index.js" type="module"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header-title">Jimmy's Diner</h1>
+            <p class="header-description">The best burgers and pizzas in town.</p>
+        </header>
+        <main class="main">
+            <div id="items" class="items">
+                <!-- Items go here -->
+            </div>
+            <div id='order' class="order">
+                <!-- Order details go here -->
+            </div>
+            <p id="thanks" class="thanks hidden">Thanks, name! Your order is on its way!</p>
+        </main>
+        
+        <div id="modal-root" class="modal-root">
+            <form id='modal-form' class="modal">
+                <h1 class="modal-title">Enter card details</h1>
+                <input required name="name" class="modal-input" type="text" placeholder="Enter your name" aria-label="name"/>
+                <input required name="card" class="modal-input" type="text" placeholder="Enter card number" aria-label="card number"/>
+                <input required name="ccv" class="modal-input" type="password" placeholder="Enter CCV" aria-label="CCV"/>
+                <button id='pay' class="modal-btn">Pay</button>
+            </form>
+        </div>
+        
+    </body>
+</html>
+
